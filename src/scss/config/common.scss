@@ -1,0 +1,43 @@
+// Заголовки, общие БЄМ блоки и прочеe...
+.gradient-button{
+    position: relative;
+    width: 100%;
+    padding: 30px;
+    background: #fff;
+    transform: translate3d(0px, 0%, 0px);
+    text-decoration: none;
+    font-size: 24px;
+    overflow: hidden;
+    display: block;
+    border-radius: 10px;
+    color: $black;
+    -webkit-text-fill-color: unset;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 100% 100% 0 0;
+        transform: translateY(100%) scaleY(.5);
+        transition: all .6s ease;
+        z-index: 1;
+        @include mainGradient();
+    }
+    &__text {
+        text-align: center;
+        position: relative;
+        display: block;
+        z-index: 2;
+        transition: .3s;
+    }
+    &:hover {
+        transition: background .2s linear;
+        color: $white;
+        &::before {
+            border-radius: 0;
+            transform: translateY(0) scaleY(1);
+        }
+    }
+}

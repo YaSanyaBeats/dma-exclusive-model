@@ -1,0 +1,35 @@
+// !gradient for text
+@mixin textGradient($gradient) {
+  background: $gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// !media
+@mixin media($width) {
+  @media (max-width: #{$width + '.98' + px}) {
+    @content;
+  }
+}
+
+// !:not (last-child)
+@mixin notLast() {
+  &:not(:last-child) {
+    @content;
+  }
+}
+
+// !:not (first-child)
+@mixin notFirst() {
+  &:not(:first-child) {
+    @content;
+  }
+}
+
+@mixin mainGradient() {
+  background: $mainGradient;
+  background-size: 200% 200%;
+  &:hover {
+    background-position: 100% 0;
+  }
+}
