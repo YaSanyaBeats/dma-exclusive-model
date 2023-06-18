@@ -1,0 +1,47 @@
+.promo {
+    margin-top: 100px;
+    &__wrapper {
+        background: $mainGradient;
+        border-radius: 25px;
+
+        padding: 80px 120px;
+
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+
+        color: white;
+    }
+    &__title {
+        font-size: 96px;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin: 0;
+    }
+    &__price {
+        font-size: 96px;
+        text-transform: uppercase;
+        font-weight: 700;
+
+        display: block;
+        margin-top: 50px;
+    }
+    &__button {
+        margin-top: 100px;
+        padding: 30px 70px;
+    }
+    &__img {
+        object-fit: contain;
+
+        position: absolute;
+        bottom: 5px;
+        right: 30px;
+        max-width: 860px;
+    }
+}
+.container {
+}
+.gradient-button {
+    &__text {}
+}

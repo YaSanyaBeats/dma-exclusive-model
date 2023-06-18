@@ -1,16 +1,17 @@
 // Заголовки, общие БЄМ блоки и прочеe...
 .gradient-button{
     position: relative;
-    width: 100%;
     padding: 30px;
     background: #fff;
-    transform: translate3d(0px, 0%, 0px);
     text-decoration: none;
     font-size: 24px;
     overflow: hidden;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 10px;
     color: $black;
+    width: fit-content;
     -webkit-text-fill-color: unset;
     &::before {
         content: '';
@@ -40,4 +41,19 @@
             transform: translateY(0) scaleY(1);
         }
     }
+}
+
+body {
+    background: $bgGradient;
+}
+
+a {
+    @include textGradient($mainGradient);
+}
+
+.section-title {
+    font-size: 96px;
+    line-height: 100px;
+    font-weight: 700;
+    margin: 0;
 }

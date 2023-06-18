@@ -1,0 +1,77 @@
+.advantages {
+    margin-top: 100px;
+    &__cards {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+    }
+    &__card {
+        flex-basis: 25%;
+    }
+}
+.advantage-card {
+    padding: 50px;
+    border: 1px solid $black;
+    border-radius: 15px;
+    transition: .3s;
+    cursor: default;
+    @include animationGradientBackground();
+    &__icon {
+        fill: transparent;
+        stroke: transparent;
+        transition: .3s;
+        path {
+            stroke: transparent;
+            fill: black;
+            transition: .3s;
+        }
+        rect {
+            fill: transparent;
+            stroke: black;
+            transition: .3s;
+        }
+    }
+    &:nth-child(2) {
+        .advantage-card__icon {
+            path {
+                stroke: black;
+                fill: transparent;
+            }
+        }
+        &:hover {
+            .advantage-card__icon {
+                path {
+                    stroke: url(#paint0_linear_222_724);
+                    fill: transparent;
+                }
+            }
+        }
+    }
+    &__title {
+        font-size: 36px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    &__text {
+        font-size: 20px;
+        font-weight: 500;
+    }
+    &__content {
+        position: relative;
+        z-index: 2;
+    }
+    &:hover {
+        color: white;
+        border-color: transparent;
+        .advantage-card__icon {
+            rect {
+                fill: white;
+                stroke: transparent;
+            }
+            path {
+                fill: url(#paint0_linear_222_724);
+                stroke: transparent;
+            }
+        }
+    }
+}
