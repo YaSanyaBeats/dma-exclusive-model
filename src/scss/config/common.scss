@@ -34,7 +34,15 @@
         transition: .3s;
     }
     &:hover {
-        transition: background .2s linear;
+        transition: all .2s linear;
+        color: $white;
+        &::before {
+            border-radius: 0;
+            transform: translateY(0) scaleY(1);
+        }
+    }
+    &_active {
+        transition: all .2s linear;
         color: $white;
         &::before {
             border-radius: 0;
@@ -52,8 +60,12 @@ a {
 }
 
 .section-title {
-    font-size: 96px;
+    font-size: 64px;
     line-height: 100px;
     font-weight: 700;
     margin: 0;
+}
+
+.dot {
+    color: $pink;
 }

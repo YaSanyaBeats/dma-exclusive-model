@@ -1,0 +1,75 @@
+.calculator {
+    margin-top: 100px;
+    &__container {
+        display: flex;
+    }
+    &__left {
+        flex: 0 0 33.33%;
+        padding: 70px 120px;
+
+        display: flex;
+        flex-direction: column;
+
+        background-color: $white;
+        border-radius: 25px;
+    }
+    &__checkbox-elem {
+        &:not(:first-child) {
+            margin-top: 50px;
+        }
+    }
+    &__checkbox-title {
+        font-size: 20px;
+    }
+    &__checkboxes {
+        display: flex;
+        gap: 15px;
+        margin-top: 10px;
+    }
+    &__checkbox {
+        font-size: 20px;
+        text-align: center;
+
+        padding: 20px;
+        flex: 1 1 200px;
+
+        border: 1px solid black;
+        border-radius: 5px;
+
+        cursor: pointer;
+
+        transition: .3s;
+
+        &.gradient-button_active {
+            border-color: transparent;
+        }
+    }
+    &__total {
+        font-size: 48px;
+        text-align: center;
+
+        margin-top: 20px;
+    }
+    &__right {
+        flex: 0 0 66.66%;
+        padding: 80px;
+
+        background: url('../images/calculator-bg.png') no-repeat 50% 50%;
+        background-size: cover;
+        border-radius: 25px;
+
+        color: $white;
+    }
+    &__button {
+        width: 100%;
+        margin-top: 30px;
+    }
+    &__title {}
+    &__text {
+        &_bold {}
+    }
+    &__list {}
+    &__list-elem {}
+    &__list-icon {}
+    &__list-text {}
+}

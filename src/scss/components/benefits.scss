@@ -1,0 +1,184 @@
+.benefits {
+    margin-top: 100px;
+    &__container {}
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+
+        margin-top: 75px;
+    }
+    &__elem {}
+}
+.benefit {
+    padding: 30px 30px 50px 30px;
+
+    background-color: $white;
+    border-radius: 15px;
+
+    position: relative;
+    overflow: hidden;
+
+    transition: .3s;
+    &__title {
+        text-transform: uppercase;
+        font-size: 32px;
+        font-weight: 600;
+        margin: 0;
+
+        position: relative;
+    }
+    &__dot {}
+    &__text {
+        margin-top: 20px;
+        margin-bottom: 0;
+        font-size: 24px;
+
+        position: relative;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        
+        width: 100px;
+        height: 100px;
+
+        background: $mainGradient;
+        border-radius: 50%;
+        filter: blur(20px);
+
+        transition: .5s;
+        animation: pulse 10s infinite;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        
+        width: 100px;
+        height: 100px;
+
+        background: $mainGradientReverse;
+        border-radius: 50%;
+        filter: blur(20px);
+
+        transition: .5s;
+        animation: pulse 10s infinite;
+    }
+    &:nth-child(1) {
+        &::before {
+            bottom: -70px;
+            left: -20px;
+        }
+        &:hover {
+            &::before {
+                left: 60px;
+                width: 500px;
+            }
+        }
+        &::after {
+            display: none;
+        }
+    }
+    &:nth-child(2) {
+        &::before {
+            top: -70px;
+            right: -70px;
+        }
+        &:hover {
+            &::before {
+                width: 400px;
+                height: 400px;
+            }
+        }
+        &::after {
+            bottom: -70px;
+            left: -20px;
+        }
+        &:hover {
+            &::after {
+                left: 0px;
+                width: 200px;
+            }
+        }
+    }
+    &:nth-child(3) {
+        &::before {
+            right: -170px;
+            bottom: -100px;
+            width: 200px;
+            height: 200px;
+        }
+        &:hover {
+            &::before {
+                right: 0px;
+                bottom: -100px;
+            }
+        }
+        &::after {
+            top: -40px;
+            left: -40px;
+        }
+        &:hover {
+            &::after {
+                top: 20px;
+                height: 200px;
+            }
+        }
+    }
+    &:nth-child(4) {
+        &::before {
+            display: none;
+        }
+        &::after {
+            bottom: -100px;
+            left: -120px;
+            width: 200px;
+            height: 200px;
+        }
+        &:hover {
+            &::after {
+                bottom: 100px;
+            }
+        }
+    }
+    &:nth-child(5) {
+        &::before {
+            top: -170px;
+            left: -100px;
+            width: 200px;
+            height: 200px;
+        }
+        &:hover {
+            &::before {
+                width: 500px;
+            }
+        }
+        &::after {
+            display: none;
+        }
+    }
+    &:nth-child(6) {
+        &::before {
+            bottom: -50px;
+            left: -30px;
+        }
+        &:hover {
+            &::before {
+                left: 60px;
+                width: 300px;
+            }
+        }
+        &::after {
+            right: -50px;
+            bottom: -50px;
+        }
+        &:hover {
+            &::after {
+                right: -20px;
+                bottom: -20px;
+                width: 200px;
+                
+            }
+        }
+    }
+}

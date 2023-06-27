@@ -1,0 +1,14 @@
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    33% {
+        transform: scale(1.2);
+    }
+    66% {
+        transform: scale(0.6);
+    }
+    to {
+        transform: scale(1);
+    }
+}
