@@ -1,3 +1,56 @@
 <section class="feedback">
-    <h1>Feedback</h1>
+    <div class="feedback__container container">
+        <div class="feedback__left">
+            <h3 class="feedback__title">Всего два клика и с тобой свяжется администратор</h3>
+            <span class="feedback__text feedback__text_bold">Администратор расскажет:</span>
+            <ul class="feedback__list">
+                <li class="feedback__list-elem">
+                    <div class="feedback__list-icon">
+                        @@include('../images/vector/check-white.svg')
+                    </div>
+                    <span class="feedback__list-text">Об условиях работы</span>
+                </li>
+                <li class="feedback__list-elem">
+                    <div class="feedback__list-icon">
+                        @@include('../images/vector/check-white.svg')
+                    </div>
+                    <span class="feedback__list-text">Даст ответы на все интересующие вопросы</span>
+                </li>
+                <li class="feedback__list-elem">
+                    <div class="feedback__list-icon">
+                        @@include('../images/vector/check-white.svg')
+                    </div>
+                    <span class="feedback__list-text">Пригласит на собеседование</span>
+                </li>
+            </ul>
+            <div class="feedback__image-wrapper">
+                <img src="../images/feedback.png" class="feedback__image">
+            </div>
+            <div class="feedback__decor">
+                @@include('../images/vector/devor-line.svg')
+            </div>
+        </div>
+        <div class="feedback__right">
+            <div class="feedback__slab-wrapper">
+                <div class="feedback__slab">
+                    <div class="feedback__circle"></div>
+                    <div class="feedback__slab-text">Ответим в течение 7 минут</div>
+                </div>
+            </div>
+            <form class="feedback__form">
+                <div class="feedback__input-wrapper input__wrapper">
+                    <input placeholder="Ваше имя" type="text" class="feedback__input input">
+                </div>
+                <div class="feedback__input-wrapper input__wrapper">
+                    <input placeholder="Ваш телефон" type="tel" class="feedback__input input">
+                </div>
+                <button class="gradient-button gradient-button_active feedback__button">
+                    <span class="gradient-button__text">Заполнить анкету</span>
+                </button>
+                <p class="feedback__rights">
+                    Заполняя форму на сайте, ты соглашаешься<br>с нашей <a class="feedback__rights" href="#">Политикой в отношении</a> обработки персональных данных
+                </p>
+            </form>
+        </div>
+    </div>
 </section>

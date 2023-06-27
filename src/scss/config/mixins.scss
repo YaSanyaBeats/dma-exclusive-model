@@ -51,3 +51,8 @@
     }
   }
 }
+
+@mixin borderGradient($width) {
+  padding: #{$width + px};
+  background: $mainGradient;
+}

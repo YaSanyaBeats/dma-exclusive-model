@@ -54,6 +54,10 @@
         flex: 0 0 66.66%;
         padding: 80px;
 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
         background: url('../images/calculator-bg.png') no-repeat 50% 50%;
         background-size: cover;
         border-radius: 25px;
@@ -64,12 +68,40 @@
         width: 100%;
         margin-top: 30px;
     }
-    &__title {}
-    &__text {
-        &_bold {}
+    &__title {
+        font-size: 48px;
+        font-weight: bold;
+        text-transform: uppercase;
+
+        max-width: 550px;
+        margin: 0;
     }
-    &__list {}
-    &__list-elem {}
-    &__list-icon {}
-    &__list-text {}
+    &__text {
+        font-size: 32px;
+
+        display: block;
+        max-width: 610px;
+        margin: 0;
+        &_bold {
+            font-weight: 600;
+        }
+    }
+    &__list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+    &__list-elem {
+        display: flex;
+        gap: 20px;
+    }
+    &__list-icon {
+        flex: 0 0 20px;
+        height: 20px;
+    }
+    &__list-text {
+        font-size: 24px;
+    }
 }
