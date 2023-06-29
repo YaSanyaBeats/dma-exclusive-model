@@ -1,0 +1,220 @@
+.equipment {
+    margin-top: 100px;
+    padding: 100px;
+    
+    background-color: $white;
+    &__container {}
+    &__header {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__title {}
+    &__number {
+        color: #7A6AF4;
+    }
+    &__cards {
+        display: flex;
+        gap: 30px;
+
+        margin-top: 100px;
+    }
+    &__card {}
+}
+.equipment-card {
+    flex: 1 1 430px;
+    height: fit-content;
+
+    border-radius: 15px;
+    overflow: hidden;
+
+    background-color: $black;
+    &__image-wrapper {
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+
+            background: linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0.00) 100%);
+        }
+    }
+    &__image {
+        width: 100%;
+        height: 330px;
+        object-fit: cover;
+    }
+    &__content {
+        padding: 0 30px;
+        transition: .6s;
+    }
+    &__title-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 50px;
+    }
+    &__title {
+        color: $white;
+        font-size: 32px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    &__button {
+        flex: 0 0 70px;
+        height: 70px;
+        position: relative;
+        
+        border-radius: 50%;
+        background-color: $white;
+
+        cursor: pointer;
+        &::before {
+            content: '';
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            width: 36px;
+            height: 3px;
+
+            transform: translate(-50%, -50%) rotate(90deg);
+            transform-origin: 50% 50%;
+            transition: .6s;
+
+            background-color: $black;
+        }
+        &::after {
+            content: '';
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            width: 36px;
+            height: 3px;
+
+            transform: translate(-50%, -50%) rotate(0deg);
+            transform-origin: 50% 50%;
+            transition: .6s;
+
+            background-color: $black;
+        }
+    }
+    &__text {
+        color: $white;
+        font-size: 20px;
+        font-weight: 500;
+
+        margin: 0;
+        overflow: hidden;
+        max-height: 0;
+
+        transition: .6s;
+    }
+    &_active {
+        .equipment-card {
+            &__text {
+                max-height: 400px;
+            }
+            &__content {
+                padding: 0 30px 50px 30px;
+            }
+            &__button {
+                &::before {
+                    transform: translate(-50%, -50%) rotate(-45deg);
+                }
+                &::after {
+                    transform: translate(-50%, -50%) rotate(-315deg);
+                }
+            }
+        }
+    }
+}
+
+@include media ($desktop) {
+    .equipment {
+        &__container {}
+        &__header {}
+        &__title {}
+        &__number {}
+        &__cards {}
+        &__card {}
+    }
+    .equipment-card {
+        &__image-wrapper {}
+        &__image {}
+        &__content {}
+        &__title-wrapper {}
+        &__title {
+            font-size: 24px;
+        }
+        &__button {}
+        &__text {
+            font-size: 16px;
+        }
+    }
+}
+
+@include media ($laptop) {
+    .equipment {
+        &__container {}
+        &__header {}
+        &__title {}
+        &__number {}
+        &__cards {}
+        &__card {}
+    }
+    .equipment-card {
+        &__image-wrapper {}
+        &__image {}
+        &__content {}
+        &__title-wrapper {}
+        &__title {}
+        &__button {}
+        &__text {}
+    }
+}
+
+@include media ($tablet) {
+    .equipment {
+        &__container {}
+        &__header {}
+        &__title {}
+        &__number {}
+        &__cards {}
+        &__card {}
+    }
+    .equipment-card {
+        &__image-wrapper {}
+        &__image {}
+        &__content {}
+        &__title-wrapper {}
+        &__title {}
+        &__button {}
+        &__text {}
+    }
+}
+
+@include media ($mobile) {
+    .equipment {
+        &__container {}
+        &__header {}
+        &__title {}
+        &__number {}
+        &__cards {}
+        &__card {}
+    }
+    .equipment-card {
+        &__image-wrapper {}
+        &__image {}
+        &__content {}
+        &__title-wrapper {}
+        &__title {}
+        &__button {}
+        &__text {}
+    }
+}

@@ -84,10 +84,23 @@ function initStickyHeader() {
     })
 }
 
+function initEquipmentAccordeon() {
+    const equipmentCards = document.querySelectorAll('.equipment__card');
+    if(equipmentCards.length > 0) {
+        equipmentCards.forEach((card) => {
+            const button = card.querySelector('.equipment-card__button');
+            button.addEventListener('click', (event) => {
+                card.classList.toggle('equipment-card_active');
+            })
+        })
+    }
+}
+
 isWebp();
 
 document.addEventListener('DOMContentLoaded', (event) => {
     initStickyHeader();
+    initEquipmentAccordeon();
 
     const calculatorNode = document.querySelector('.calculator');
     if(calculatorNode) {

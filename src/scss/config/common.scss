@@ -109,8 +109,8 @@ a {
 
 @include media($desktop) {
     .section-title {
-        font-size: 64px;
-        line-height: 100px;
+        font-size: 56px;
+        line-height: 80px;
     }
 }
 
@@ -133,6 +133,12 @@ a {
         font-size: 36px;
         line-height: 40px;
     }
+}
+
+.section-text {
+    margin: 0;
+    font-size: 24px;
+    max-width: 1100px;
 }
 
 .dot {

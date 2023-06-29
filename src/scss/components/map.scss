@@ -1,0 +1,18 @@
+.map {
+    margin-top: 100px;
+    &__container {}
+    &__header {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__title {}
+    &__number {
+        color: #FA065B;
+    }
+    &__image-wrapper {
+        margin-top: 100px;
+        svg {
+            width: 100%;
+        }
+    }
+}

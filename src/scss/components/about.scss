@@ -1,0 +1,126 @@
+.about {
+    &__container {}
+    &__info {}
+    &__title {}
+    &__text {}
+    &__cards {
+        margin-top: 100px;
+        display: flex;
+        gap: 30px;
+    }
+    &__card {
+        
+    }
+    &__button {
+        width: 100%;
+        margin-top: 30px;
+    }
+}
+.about-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 30px;
+    min-height: 600px;
+    flex: 1 1 430px;
+
+    color: $black;
+    background-color: $white;
+    border-radius: 30px;
+    &__title {
+        font-size: 64px;
+
+        margin: 0;
+    }
+    &__text {
+        font-size: 32px;
+        font-weight: 600;
+    }
+    &_with-image {
+        color: $white;
+        background-position: 30% 50% !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+    }
+    &_purple {
+        background-color: #DDC5FF;
+    }
+}
+
+@include media ($desktop) {
+    .about {
+        &__container {}
+        &__info {}
+        &__title {}
+        &__text {}
+        &__cards {}
+        &__card {}
+        &__button {}
+    }
+    .about-card {
+        min-height: 500px;
+        &_with-image {}
+        &_purple {}
+        &__title {
+            font-size: 56px;
+        }
+        &__text {
+            font-size: 30px;
+        }
+    }
+}
+
+@include media ($laptop) {
+    .about {
+        &__container {}
+        &__info {}
+        &__title {}
+        &__text {}
+        &__cards {}
+        &__card {}
+        &__button {}
+    }
+    .about-card {
+        &_with-image {}
+        &_purple {}
+        &__title {}
+        &__text {}
+    }
+}
+
+@include media ($tablet) {
+    .about {
+        &__container {}
+        &__info {}
+        &__title {}
+        &__text {}
+        &__cards {}
+        &__card {}
+        &__button {}
+    }
+    .about-card {
+        &_with-image {}
+        &_purple {}
+        &__title {}
+        &__text {}
+    }
+}
+
+@include media ($mobile) {
+    .about {
+        &__container {}
+        &__info {}
+        &__title {}
+        &__text {}
+        &__cards {}
+        &__card {}
+        &__button {}
+    }
+    .about-card {
+        &_with-image {}
+        &_purple {}
+        &__title {}
+        &__text {}
+    }
+}

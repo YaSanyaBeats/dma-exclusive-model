@@ -29,7 +29,7 @@ body {
     padding: 0 15px;
 }
 
-@include media($wide) {
+@include media($desktop) {
     .container {
         max-width: 1440px;
     }
