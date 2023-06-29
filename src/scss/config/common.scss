@@ -51,6 +51,30 @@
     }
 }
 
+@include media($desktop) {
+    .gradient-button {
+        font-size: 20px;
+    }
+}
+
+@include media($laptop) {
+    .gradient-button {
+        font-size: 16px;
+    }
+}
+
+@include media($tablet) {
+    .gradient-button {
+        font-size: 16px;
+        padding: 20px;
+    }
+}
+
+@include media($mobile) {
+    .gradient-button {
+    }
+}
+
 body {
     background: $bgGradient;
 }
@@ -83,6 +107,34 @@ a {
     margin: 0;
 }
 
+@include media($desktop) {
+    .section-title {
+        font-size: 64px;
+        line-height: 100px;
+    }
+}
+
+@include media($laptop) {
+    .section-title {
+        font-size: 48px;
+        line-height: 60px;
+    }
+}
+
+@include media($tablet) {
+    .section-title {
+        font-size: 42px;
+        line-height: 50px;
+    }
+}
+
+@include media($mobile) {
+    .section-title {
+        font-size: 36px;
+        line-height: 40px;
+    }
+}
+
 .dot {
     color: $pink;
 }
@@ -108,5 +160,30 @@ a {
 
     &:focus {
         text-indent: 5px;
+    }
+}
+
+@include media ($desktop) {
+    .input {
+        font-size: 24px;
+    }
+}
+
+@include media ($laptop) {
+    .input {
+        font-size: 20px;
+    }
+}
+
+@include media ($tablet) {
+    .input {
+        font-size: 16px;
+        padding: 20px;
+    }
+}
+
+@include media ($mobile) {
+    .input {
+        font-size: 13px;
     }
 }

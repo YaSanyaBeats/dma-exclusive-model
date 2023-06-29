@@ -182,3 +182,73 @@
         }
     }
 }
+
+@include media ($desktop) {
+    .benefits {
+        &__container {}
+        &__grid {}
+        &__elem {}
+    }
+    .benefit {
+        &__title {}
+        &__dot {}
+        &__text {}
+    }
+}
+
+@include media ($laptop) {
+    .benefits {
+        &__container {}
+        &__grid {
+            margin-top: 40px;
+        }
+        &__elem {}
+    }
+    .benefit {
+        &__title {}
+        &__dot {}
+        &__text {}
+    }
+}
+
+@include media ($tablet) {
+    .benefits {
+        margin-top: 50px;
+        &__container {}
+        &__grid {
+        }
+        &__elem {}
+    }
+    .benefit {
+        &__title {
+            font-size: 24px;
+        }
+        &__dot {}
+        &__text {
+            font-size: 18px;
+        }
+    }
+}
+
+@include media ($mobile) {
+    .benefits {
+        &__container {}
+        &__grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        &__elem {}
+    }
+    .benefit {
+        padding: 20px;
+        &__title {
+            font-size: 20px;
+        }
+        &__dot {}
+        &__text {
+            font-size: 13px;
+
+            margin-top: 10px;
+        }
+    }
+}

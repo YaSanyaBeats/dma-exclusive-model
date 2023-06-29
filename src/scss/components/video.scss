@@ -10,7 +10,7 @@
 
         color: white;
         border-radius: 25px;
-        background: url('../../images/video.jpg') no-repeat 50% 50%;
+        background: url('../images/video.jpg') no-repeat 50% 50%;
         background-size: cover;
     }
     &__title {
@@ -25,6 +25,10 @@
 
         font-size: 24px;
         font-weight: 500;
+
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
     }
     &__text {
     }
@@ -36,7 +40,7 @@
         width: 100px;
         height: 100px;
 
-        background: url('../../images/vector/play.svg') no-repeat 50% 50%;
+        background: url('../images/vector/play.svg') no-repeat 50% 50%;
         background-size: contain;
         border-radius: 50%;
         cursor: pointer;
@@ -48,5 +52,78 @@
         }
     }
 }
-.container {
+
+@include media($desktop) {
+    .video {
+		&__wrapper {}
+		&__title {}
+		&__paragraph {}
+		&__text {}
+		&__button {}
+    }
+}
+
+@include media($laptop) {
+    .video {
+        
+		&__wrapper {
+            padding: 80px 60px;
+            min-height: 500px;
+            
+        }
+		&__title {
+            font-size: 40px;
+            
+        }
+		&__paragraph {
+           
+        }
+		&__text {
+            font-size: 20px;
+            
+        }
+		&__button {}
+    }
+}
+
+@include media($tablet) {
+    .video {
+        margin-top: 50px;
+		&__wrapper {
+            flex-direction: column;
+            justify-content: flex-end;
+            gap: 10px;
+            
+            padding: 30px 40px;
+        }
+		&__title {
+            flex: 0 0 auto;
+            font-size: 16px;
+
+            margin: 0;
+        }
+		&__paragraph {
+            flex: 0 0 auto;
+            max-width: 210px;
+            display: flex;
+            flex-direction: column;
+        }
+		&__text {
+            font-size: 12px;
+        }
+		&__button {
+            width: 50px;
+            height: 50px;
+        }
+    }
+}
+
+@include media($mobile) {
+    .video {
+		&__wrapper {}
+		&__title {}
+		&__paragraph {}
+		&__text {}
+		&__button {}
+    }
 }

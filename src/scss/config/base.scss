@@ -28,3 +28,9 @@ body {
     margin: 0 auto;
     padding: 0 15px;
 }
+
+@include media($wide) {
+    .container {
+        max-width: 1440px;
+    }
+}

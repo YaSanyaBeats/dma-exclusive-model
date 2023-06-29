@@ -40,8 +40,79 @@
         max-width: 860px;
     }
 }
-.container {
+
+@include media($desktop) {
+    .promo {
+		&__wrapper {}
+		&__title {}
+		&__price {}
+		&__button {}
+		&__img {}
+    }
 }
-.gradient-button {
-    &__text {}
+
+@include media($laptop) {
+    .promo {
+		&__wrapper {
+            padding: 60px
+        }
+		&__title {
+            font-size: 64px;
+        }
+		&__price {
+            font-size: 48px;
+        }
+		&__button {}
+		&__img {
+            max-width: 700px;
+        }
+    }
+}
+
+@include media($tablet) {
+    .promo {
+        margin-top: 50px;
+		&__wrapper {
+        }
+        &__container {
+            padding: 0;
+        }
+		&__title {
+            font-size: 32px;
+        }
+		&__price {
+            font-size: 32px;
+            margin-top: 20px;
+        }
+		&__button {
+            margin-top: 20px;
+        }
+		&__img {
+            max-width: 400px;
+        }
+    }
+}
+
+@include media($mobile) {
+    .promo {
+		&__wrapper {
+            padding: 50px 30px;
+        }
+		&__title {
+            z-index: 4;
+            font-size: 28px;
+        }
+		&__price {
+            z-index: 4;
+            font-size: 28px;
+        }
+		&__button {
+            padding: 20px 50px;
+            z-index: 4;
+        }
+		&__img {
+            bottom: -50px;
+            right: -170px;
+        }
+    }
 }

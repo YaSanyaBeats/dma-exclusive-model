@@ -20,6 +20,13 @@
         fill: transparent;
         stroke: transparent;
         transition: .3s;
+
+        width: 60px;
+        height: 60px;
+        svg {
+            width: 100%;
+            height: 100%;
+        }
         path {
             stroke: transparent;
             fill: black;
@@ -51,14 +58,28 @@
         font-size: 36px;
         font-weight: 600;
         text-transform: uppercase;
+
+        margin-top: 50px;
+        margin-bottom: 0;
+
+        flex: 0 0 70px;
     }
     &__text {
+        display: block;
+        margin-top: 30px;
+
         font-size: 20px;
         font-weight: 500;
+
+        flex-grow: 1;
     }
     &__content {
         position: relative;
         z-index: 2;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
     }
     &:hover {
         color: white;
@@ -72,6 +93,86 @@
                 fill: url(#paint0_linear_222_724);
                 stroke: transparent;
             }
+        }
+    }
+}
+
+@include media($desktop) {
+    .advantages {
+        &__cards {}
+        &__card {
+            
+        }
+    }
+    .advantage-card {
+        &__content {}
+        &__icon {}
+        &__title {}
+        &__text {}
+    }
+}
+
+@include media($laptop) {
+    .advantages {
+        &__cards {}
+        &__card {
+            
+        }
+    }
+    .advantage-card {
+        padding: 30px;
+        &__content {}
+        &__icon {}
+        &__title {
+            font-size: 28px;
+        }
+        &__text {
+            font-size: 20px;
+        }
+    }
+}
+
+@include media($tablet) {
+    .advantages {
+        margin-top: 50px;
+        &__cards {
+            flex-wrap: wrap;
+        }
+        &__card {}
+    }
+    .advantage-card {
+        flex: 1 1 40%;
+        &__content {}
+        &__icon {}
+        &__title {
+            font-size: 24px;
+
+            flex: 0 0 30px;
+        }
+        &__text {
+            font-size: 18px;
+        }
+    }
+}
+
+@include media($mobile) {
+    .advantages {
+        &__cards {}
+        &__card {}
+    }
+    .advantage-card {
+        flex: 1 1 100%;
+        &__content {}
+        &__icon {
+            width: 50px;
+            height: 50px;
+        }
+        &__title {
+            font-size: 20px;
+            margin-top: 40px;
+        }
+        &__text {
+            font-size: 15px;
         }
     }
 }

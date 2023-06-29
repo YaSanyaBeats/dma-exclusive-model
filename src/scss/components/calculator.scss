@@ -4,7 +4,7 @@
         display: flex;
     }
     &__left {
-        flex: 0 0 33.33%;
+        flex: 1 1 33.33%;
         padding: 70px 120px;
 
         display: flex;
@@ -51,7 +51,7 @@
         margin-top: 20px;
     }
     &__right {
-        flex: 0 0 66.66%;
+        flex: 1 1 66.66%;
         padding: 80px;
 
         display: flex;
@@ -95,13 +95,158 @@
     }
     &__list-elem {
         display: flex;
+        align-items: center;
         gap: 20px;
     }
     &__list-icon {
-        flex: 0 0 20px;
-        height: 20px;
+        display: flex;
+        flex: 0 0 30px;
+        height: 30px;
+        svg {
+            width: 100%;
+            height: 100%;
+        }
     }
     &__list-text {
         font-size: 24px;
+    }
+}
+
+@include media ($desktop) {
+    .calculator {
+		&__container {}
+		&__left {
+            flex: 1 1 600px;
+        }
+		&__checkbox-elem {}
+		&__checkbox-title {}
+		&__checkboxes {}
+		&__checkbox {}
+		&__total {}
+		&__button {}
+		&__right {
+            flex: 1 1 1200px;
+        }
+		&__title {}
+		&__text {
+			&_bold {}
+		}
+		&__list {}
+		&__list-elem {}
+		&__list-icon {}
+		&__list-text {}
+    }
+}
+
+@include media ($laptop) {
+    .calculator {
+		&__container {}
+		&__left {
+            padding: 50px;
+        }
+		&__checkbox-elem {}
+		&__checkbox-title {}
+		&__checkboxes {}
+		&__checkbox {
+            padding: 15px;
+        }
+		&__total {
+            font-size: 36px;
+        }
+		&__button {}
+		&__right {
+            padding: 60px;
+        }
+		&__title {
+            font-size: 36px;
+        }
+		&__text {
+            font-size: 24px;
+			&_bold {}
+		}
+		&__list {}
+		&__list-elem {}
+		&__list-icon {}
+		&__list-text {
+            font-size: 20px;
+        }
+    }
+}
+
+@include media ($tablet) {
+    .calculator {
+        margin-top: 50px;
+		&__container {}
+		&__left {}
+		&__checkbox-elem {}
+		&__checkbox-title {}
+		&__checkboxes {}
+		&__checkbox {}
+		&__total {}
+		&__button {}
+		&__right {
+            justify-content: space-around;
+        }
+		&__title {
+            font-size: 20px;
+        }
+		&__text {
+            font-size: 15px;
+			&_bold {}
+		}
+		&__list {}
+		&__list-elem {}
+		&__list-icon {
+            flex: 0 0 20px;
+            height: 20px;
+        }
+		&__list-text {
+            font-size: 13px;
+        }
+    }
+}
+
+@include media ($mobile) {
+    .calculator {
+		&__container {
+            flex-direction: column;
+        }
+		&__left {
+            flex: 0 0 auto;
+            padding: 20px;
+        }
+		&__checkbox-elem {
+            &:not(:first-child) {
+                margin-top: 10px;
+            }
+        }
+		&__checkbox-title {
+            font-size: 13px;
+        }
+		&__checkboxes {}
+		&__checkbox {
+            padding: 10px;
+            font-size: 16px;
+        }
+		&__total {
+            font-size: 28px;
+        }
+		&__button {}
+		&__right {
+            flex: 0 0 auto;
+            padding: 30px;
+            gap: 20px;
+        }
+		&__title {}
+		&__text {
+			&_bold {}
+		}
+		&__list {
+            margin: 0;
+            gap: 10px;
+        }
+		&__list-elem {}
+		&__list-icon {}
+		&__list-text {}
     }
 }

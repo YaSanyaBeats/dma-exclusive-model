@@ -7,6 +7,7 @@
         width: 100%;
         z-index: 10;
         background: $bgGradient;
+        transition: .3s;
     }
     &__container {
         display: flex;
@@ -14,7 +15,9 @@
         align-items: center;
         padding: 25px 15px;
     }
-    &__logo {}
+    &__logo {
+        display: flex;
+    }
     &__menu {
         
     }
@@ -27,9 +30,10 @@
         font-weight: 500;
     }
 }
-.container {
-}
 .logo {
+    & svg {
+        width: 100%;
+    }
 }
 .menu {
     flex-grow: 1;
@@ -43,7 +47,7 @@
         list-style: none;
     }
     &__elem {
-
+        display: flex;
     }
     &__link {
         color: $black;
@@ -57,9 +61,154 @@
         -webkit-text-fill-color: unset;
     }
 }
-.gradient-button {
-    &__text {}
-}
 .burger-button {
-    &__line {}
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border: none;
+
+    width: 40px;
+    height: 40px;
+
+    background-color: $white;
+    border-radius: 50%;
+
+    &__line {
+        background-color: $black;
+        width: 18px;
+        height: 2px;
+        border-radius: 2px;
+    }
+}
+
+@include media($desktop) {
+    .header {
+        &__wrapper {}
+        &__container {}
+        &__logo {}
+        &__menu {}
+        &__button {
+            
+        }
+        &__burger-button {}
+    }
+    .logo {
+    }
+    .menu {
+        &__list {}
+        &__elem {}
+        &__link {
+            font-size: 16px;
+        }
+    }
+    .burger-button {
+        &__line {}
+    }
+}
+
+@include media($laptop) {
+    .header {
+        &__wrapper {}
+        &__container {}
+        &__logo {}
+        &__menu {
+            
+        }
+        &__button {
+            font-size: 16px;
+        }
+        &__burger-button {}
+    }
+    .logo {
+    }
+    .menu {
+        &__list {
+            gap: 20px;
+        }
+        &__elem {}
+        &__link {
+            font-size: 14px;
+        }
+    }
+    .burger-button {
+        &__line {}
+    }
+}
+
+@include media($tablet) {
+    .header {
+        min-height: 0;
+        
+        &__wrapper {
+            background: transparent;
+            &_scroll {
+                background-color: #feedf3;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+            }
+        }
+        &__container {
+            padding: 25px 30px;
+        }
+        &__logo {
+            & svg {
+                & path {
+                    fill: white;
+                }
+            }
+        }
+        &__menu {
+            display: none;
+        }
+        &__button {
+            display: none;
+        }
+        &__burger-button {
+            display: flex;
+        }
+    }
+    .logo {
+    }
+    .menu {
+        &__list {}
+        &__elem {}
+        &__link {}
+    }
+    .burger-button {
+        &__line {}
+    }
+}
+
+@include media($mobile) {
+    .header {
+        &__wrapper {
+            padding: 15px 0;
+            &_scroll {
+                padding: 0;
+                & .logo {
+                    & path {
+                        fill: $black;
+                    }
+                }
+            }
+        }
+        &__container {
+            padding: 10px 30px;
+        }
+        &__logo {}
+        &__menu {}
+        &__button {}
+        &__burger-button {}
+    }
+    .logo {
+        width: 200px;
+    }
+    .menu {
+        &__list {}
+        &__elem {}
+        &__link {}
+    }
+    .burger-button {
+        &__line {}
+    }
 }

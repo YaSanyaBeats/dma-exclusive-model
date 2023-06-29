@@ -20,3 +20,74 @@
     }
     &__link {}
 }
+
+@include media ($desktop) {
+    .footer {
+        &_container {}
+        &__logo {}
+        &__menu {}
+        &__text {}
+        &__link {}
+    }
+    .menu {
+        &__list {}
+        &__elem {}
+        &__link {}
+    }
+}
+
+@include media ($laptop) {
+    .footer {
+        &_container {}
+        &__logo {}
+        &__menu {}
+        &__text {
+            font-size: 16px;
+        }
+        &__link {}
+    }
+    .menu {
+        &__list {}
+        &__elem {}
+        &__link {}
+    }
+}
+
+@include media ($tablet) {
+    .footer {
+        margin-top: 50px;
+        &_container {}
+        &__logo {}
+        &__menu {}
+        &__text {}
+        &__link {}
+    }
+    .menu {
+        &__list {}
+        &__elem {}
+        &__link {}
+    }
+}
+
+@include media ($mobile) {
+    .footer {
+        &_container {
+            gap: 50px;
+        }
+        &__logo {}
+        &__menu {}
+        &__text {}
+        &__link {}
+    }
+    .menu {
+        &__list {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        &__elem {
+        }
+        &__link {
+        }
+    }
+}
