@@ -1,0 +1,52 @@
+.article {
+    margin-top: 50px;
+    &__container {}
+    &__title {
+        line-height: 1.05;
+    }
+    &__main-image-wrapper {
+        margin-top: 100px;
+    }
+    &__main-image {
+        border-radius: 25px;
+        overflow: hidden;
+        width: 100%;
+        max-height: 700px;
+        object-fit: cover;
+    }
+    &__content {
+        margin-top: 100px;
+        h2 {
+            font-size: 36px;
+        }
+        h3 {
+            font-size: 30px;
+        }
+        h4 {
+            font-size: 24px;
+        }
+        p {
+            font-size: 24px;
+            line-height: 1.25;
+        }
+        img {
+            border-radius: 15px;
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            &.article-image {
+                width: calc(50% - 30px);
+                margin-right: 15px;
+            }
+        }
+        blockquote {
+            padding: 60px 40px;
+            margin: 0;
+
+            background: $mainGradient;
+            color: $white;
+
+            border-radius: 10px;
+        }
+    }
+}

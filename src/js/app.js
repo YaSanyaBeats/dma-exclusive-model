@@ -104,32 +104,38 @@ class Popup {
 }
 
 class Hotspot {
-    constructor(circle) {
-        this.circle = circle;
+    constructor(root) {
+        this.root = root;
 
         this.bindListeners();
     }
 
     bindListeners() {
-        this.circle.addEventListener('onmouse', (event => {
-            this.show();
+        this.root.addEventListener('mouseover', (event => {
+            //this.show();
+            console.log('over');
+        }))
+        this.root.addEventListener('mouseout', (event => {
+            //this.show();
+            console.log('out');
         }))
     }
 
     getCircleAbsoluteCoords() {
-        let coords = this.circle.getBoundingsClientRect();
+        console.log(this.root);
+        let coords = this.root.getBoundingClientRect();
 
         return {
-            top: box.top + window.pageYOffset,
-            right: box.right + window.pageXOffset,
-            bottom: box.bottom + window.pageYOffset,
-            left: box.left + window.pageXOffset
+            top: coords.top + window.pageYOffset,
+            right: coords.right + window.pageXOffset,
+            bottom: coords.bottom + window.pageYOffset,
+            left: coords.left + window.pageXOffset
         };
 
     }
 
     show() {
-        
+        console.log(this.getCircleAbsoluteCoords());
     }
 }
 
@@ -178,6 +184,13 @@ function initGallery() {
     }
 }
 
+function initStudiosGallery() {
+    const galleryNode = document.querySelector('.gallery-studios');
+    if(galleryNode) {
+        let lightbox = new SimpleLightbox('.gallery-studios a', { /* options */ });
+    }
+}
+
 function initPopup() {
     const popupButtons = document.querySelectorAll('a[href="#feedback"]');
     if(popupButtons.length > 0) {
@@ -205,6 +218,15 @@ function initJobSwiper() {
     });
 }
 
+function initHotSpots() {
+    const hotSpotNodes = document.querySelectorAll('.map__image-wrapper .hotspot');
+    if(hotSpotNodes.length > 0) {
+        hotSpotNodes.forEach((elem, index) => {
+            new Hotspot(elem);
+        })
+    }
+}
+
 isWebp();
 
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -212,8 +234,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
     initEquipmentAccordion();
     initFAQAccordion();
     initGallery();
+    initStudiosGallery();
     initPopup();
     initJobSwiper();
+    initHotSpots();
 
     const calculatorNode = document.querySelector('.calculator');
     if(calculatorNode) {

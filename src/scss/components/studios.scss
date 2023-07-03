@@ -33,12 +33,26 @@
     transition: .3s;
 
     cursor: pointer;
+
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
     &_more {
         border: 1px solid $black;
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 0;
+        background: none;
+        text-decoration: none;
+        color: $black;
+        &:hover {
+            .studio-card {
+                &__text {
+                    font-weight: 700;
+                }
+            }
+            
+        }
     }
     &__title {
         position: absolute;
@@ -58,6 +72,7 @@
     &__text {
         font-size: 24px;
         font-weight: 400;
+        transition: .3s;
     }
     &:hover {
         background-size: auto 110%;
