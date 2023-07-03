@@ -72,6 +72,67 @@ class Calculator{
     }
 }
 
+class Popup {
+    constructor(root) {
+        this.root = root;
+        this.closeButton = this.root.querySelector('.popup__close');
+        this.overlay = this.root;
+        this.html = document.querySelector('html');
+        this.bindListeners();
+    }
+
+    bindListeners() {
+        this.root.addEventListener('click', (event) => {
+            //Если нажатие на оверлей или на кнопку закрытия
+            if(event.target == this.overlay || event.target == this.closeButton) {
+                event.preventDefault();
+                this.close();
+            }
+        })
+    }
+
+    open() {
+        console.log('open');
+        this.html.classList.add('no-scroll');
+        this.root.classList.add('popup__overlay_show');
+    }
+
+    close() {
+        this.html.classList.remove('no-scroll');
+        this.root.classList.remove('popup__overlay_show');
+    }
+}
+
+class Hotspot {
+    constructor(circle) {
+        this.circle = circle;
+
+        this.bindListeners();
+    }
+
+    bindListeners() {
+        this.circle.addEventListener('onmouse', (event => {
+            this.show();
+        }))
+    }
+
+    getCircleAbsoluteCoords() {
+        let coords = this.circle.getBoundingsClientRect();
+
+        return {
+            top: box.top + window.pageYOffset,
+            right: box.right + window.pageXOffset,
+            bottom: box.bottom + window.pageYOffset,
+            left: box.left + window.pageXOffset
+        };
+
+    }
+
+    show() {
+        
+    }
+}
+
 function initStickyHeader() {
     const header = document.querySelector('.header__wrapper');
     document,addEventListener('scroll', (event) => {
@@ -84,23 +145,75 @@ function initStickyHeader() {
     })
 }
 
-function initEquipmentAccordeon() {
+function initEquipmentAccordion() {
     const equipmentCards = document.querySelectorAll('.equipment__card');
     if(equipmentCards.length > 0) {
         equipmentCards.forEach((card) => {
             const button = card.querySelector('.equipment-card__button');
             button.addEventListener('click', (event) => {
                 card.classList.toggle('equipment-card_active');
+                button.classList.toggle('accordion-button_active')
             })
         })
     }
+}
+
+function initFAQAccordion() {
+    const FAQCards = document.querySelectorAll('.accordion__elem');
+    if(FAQCards.length > 0) {
+        FAQCards.forEach((card) => {
+            const button = card.querySelector('.accordion-button');
+            button.addEventListener('click', (event) => {
+                card.classList.toggle('accordion__elem_active');
+                button.classList.toggle('accordion-button_active')
+            })
+        })
+    }
+}
+
+function initGallery() {
+    const galleryNode = document.querySelector('.gallery');
+    if(galleryNode) {
+        let lightbox = new SimpleLightbox('.gallery a', { /* options */ });
+    }
+}
+
+function initPopup() {
+    const popupButtons = document.querySelectorAll('a[href="#feedback"]');
+    if(popupButtons.length > 0) {
+        const popupNode = document.querySelector('#feedback');
+        let popup = new Popup(popupNode);
+        popupButtons.forEach((button) => {
+            button.addEventListener('click', (event) => {
+                popup.open();
+            })
+        })
+    }
+}
+
+function initJobSwiper() {
+    const jobNode = document.querySelector('.job__swiper');
+    const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        loop: true,
+        
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
 }
 
 isWebp();
 
 document.addEventListener('DOMContentLoaded', (event) => {
     initStickyHeader();
-    initEquipmentAccordeon();
+    initEquipmentAccordion();
+    initFAQAccordion();
+    initGallery();
+    initPopup();
+    initJobSwiper();
 
     const calculatorNode = document.querySelector('.calculator');
     if(calculatorNode) {

@@ -89,14 +89,17 @@
         &__logo {}
         &__menu {}
         &__button {
-            
+            font-size: 16px;
         }
         &__burger-button {}
     }
     .logo {
+        width: 270px;
     }
     .menu {
-        &__list {}
+        &__list {
+            gap: 50px;
+        }
         &__elem {}
         &__link {
             font-size: 16px;

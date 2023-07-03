@@ -49,7 +49,11 @@
 .social {
     display: flex;
     gap: 10px;
-    &__elem {}
+    &__elem {
+        &::before {
+            display: none;
+        }
+    }
 }
 
 @include media($desktop) {

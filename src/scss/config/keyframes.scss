@@ -12,3 +12,33 @@
         transform: scale(1);
     }
 }
+
+@keyframes hotspot {
+    from {
+        r: 9.5;
+        opacity: 1;
+    }
+    
+    20% {
+        opacity: 1;
+    }
+
+    64% {
+        r: 20;
+        opacity: 0;
+    }
+
+    65% {
+        r: 9.5;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    to {
+        r: 9.5;
+        opacity: 1;
+    }
+
+}

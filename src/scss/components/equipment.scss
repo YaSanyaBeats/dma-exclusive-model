@@ -1,6 +1,6 @@
 .equipment {
     margin-top: 100px;
-    padding: 100px;
+    padding: 100px 0;
     
     background-color: $white;
     &__container {}
@@ -63,46 +63,7 @@
         text-transform: uppercase;
     }
     &__button {
-        flex: 0 0 70px;
-        height: 70px;
-        position: relative;
         
-        border-radius: 50%;
-        background-color: $white;
-
-        cursor: pointer;
-        &::before {
-            content: '';
-
-            position: absolute;
-            top: 50%;
-            left: 50%;
-
-            width: 36px;
-            height: 3px;
-
-            transform: translate(-50%, -50%) rotate(90deg);
-            transform-origin: 50% 50%;
-            transition: .6s;
-
-            background-color: $black;
-        }
-        &::after {
-            content: '';
-
-            position: absolute;
-            top: 50%;
-            left: 50%;
-
-            width: 36px;
-            height: 3px;
-
-            transform: translate(-50%, -50%) rotate(0deg);
-            transform-origin: 50% 50%;
-            transition: .6s;
-
-            background-color: $black;
-        }
     }
     &__text {
         color: $white;
@@ -124,12 +85,6 @@
                 padding: 0 30px 50px 30px;
             }
             &__button {
-                &::before {
-                    transform: translate(-50%, -50%) rotate(-45deg);
-                }
-                &::after {
-                    transform: translate(-50%, -50%) rotate(-315deg);
-                }
             }
         }
     }
@@ -141,20 +96,33 @@
         &__header {}
         &__title {}
         &__number {}
-        &__cards {}
+        &__cards {
+            gap: 10px;
+        }
         &__card {}
     }
     .equipment-card {
         &__image-wrapper {}
         &__image {}
-        &__content {}
-        &__title-wrapper {}
+        &__content {
+            padding: 0 10px;
+        }
+        &__title-wrapper {
+            gap: 10px;
+        }
         &__title {
             font-size: 24px;
         }
         &__button {}
         &__text {
             font-size: 16px;
+        }
+        &_active {
+            .equipment-card {
+                &__content {
+                    padding: 0 10px 30px 10px;
+                }
+            }
         }
     }
 }

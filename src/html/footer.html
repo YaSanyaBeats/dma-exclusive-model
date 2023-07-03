@@ -5,15 +5,41 @@
         </div>
         <nav class="footer__menu menu">
             <ul class="menu__list">
-                <li class="menu__elem"><a href="#" class="menu__link">О студии</a></li>
-                <li class="menu__elem"><a href="#" class="menu__link">FAQ</a></li>
-                <li class="menu__elem"><a href="#" class="menu__link">Вакансии</a></li>
-                <li class="menu__elem"><a href="#" class="menu__link">Галерея</a></li>
-                <li class="menu__elem"><a href="#" class="menu__link">Блог</a></li>
-                <li class="menu__elem"><a href="#" class="menu__link">Контакты</a></li>
+                <li class="menu__elem"><a href="about.html" class="menu__link">О студии</a></li>
+                <li class="menu__elem"><a href="faq.html" class="menu__link">FAQ</a></li>
+                <li class="menu__elem"><a href="job.html" class="menu__link">Вакансии</a></li>
+                <li class="menu__elem"><a href="gallery.html" class="menu__link">Галерея</a></li>
+                <li class="menu__elem"><a href="blog.html" class="menu__link">Блог</a></li>
+                <li class="menu__elem"><a href="contacts.html" class="menu__link">Контакты</a></li>
             </ul>
         </nav>
         <p class="footer__text">Студия EXCLUSIVE MODEL не предоставляет и не является посредником в предоставлении услуг интимного характера. Все общение виртуально и несет исключительно развлекательный характер. Для лиц старше 18 лет.</p>
         <p class="footer__text">© 2012-2023 EXCLUSIVE MODEL | <a class="footer__link">Политика конфиденциальности</a></p>
     </div>
 </footer>
+
+<div class="popup__overlay" id="feedback">
+    <div class="popup feedback-popup">
+        <div class="popup__close"></div>
+        <div class="feedback__slab-wrapper">
+            <div class="feedback__slab">
+                <div class="feedback__circle"></div>
+                <div class="feedback__slab-text">Ответим в течение 7 минут</div>
+            </div>
+        </div>
+        <form class="feedback__form">
+            <div class="feedback__input-wrapper input__wrapper">
+                <input placeholder="Ваше имя" type="text" class="feedback__input input">
+            </div>
+            <div class="feedback__input-wrapper input__wrapper">
+                <input placeholder="Ваш телефон" type="tel" class="feedback__input input">
+            </div>
+            <button class="gradient-button gradient-button_active feedback__button">
+                <span class="gradient-button__text">Заполнить анкету</span>
+            </button>
+            <p class="feedback__rights">
+                Заполняя форму на сайте, ты соглашаешься<br>с нашей <a class="feedback__rights" href="#">Политикой в отношении</a> обработки персональных данных
+            </p>
+        </form>
+    </div>
+</div>

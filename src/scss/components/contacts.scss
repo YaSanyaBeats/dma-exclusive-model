@@ -1,0 +1,9 @@
+.contacts {
+    margin-top: 50px;
+    &__container {}
+    &__info {}
+    &__content {
+        display: flex;
+        margin-top: 100px;
+    }
+}
