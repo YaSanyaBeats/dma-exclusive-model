@@ -103,6 +103,28 @@ class Popup {
     }
 }
 
+class CityPopup extends Popup {
+    constructor(root) {
+        super(root);
+        this.titleNode = this.root.querySelector('.city-popup__title');
+        this.roomNode = this.root.querySelector('.city-popup__text_rooms');
+        this.dateNode = this.root.querySelector('.city-popup__text_date');
+        this.imgNode = this.root.querySelector('.city-popup__image');
+        this.imgLinkNode = this.root.querySelector('.city-popup__left');
+    }
+
+    open(triggerElem) {
+        this.html.classList.add('no-scroll');
+        this.root.classList.add('popup__overlay_show');
+
+        this.titleNode.innerText = triggerElem.getAttribute('data-title');
+        this.roomNode.innerText = triggerElem.getAttribute('data-room');
+        this.dateNode.innerText = triggerElem.getAttribute('data-date');
+        this.imgLinkNode.setAttribute('href', triggerElem.getAttribute('data-img'));
+        this.imgNode.setAttribute('src', triggerElem.getAttribute('data-img'));
+    }
+}
+
 class Hotspot {
     constructor(root) {
         this.root = root;
@@ -182,6 +204,11 @@ function initGallery() {
     if(galleryNode) {
         let lightbox = new SimpleLightbox('.gallery a', { /* options */ });
     }
+
+    const cityNode = document.querySelector('.city-popup__left');
+    if(cityNode) {
+        let lightbox = new SimpleLightbox('.city-popup__left', { /* options */ });
+    }
 }
 
 function initStudiosGallery() {
@@ -199,6 +226,18 @@ function initPopup() {
         popupButtons.forEach((button) => {
             button.addEventListener('click', (event) => {
                 popup.open();
+            })
+        })
+    }
+
+    const cityPopupButtons = document.querySelectorAll('a[href="#city"]');
+    if(cityPopupButtons.length > 0) {
+        const popupNode = document.querySelector('#city');
+        console.log(1);
+        let popup = new CityPopup(popupNode);
+        cityPopupButtons.forEach((button) => {
+            button.addEventListener('click', (event) => {
+                popup.open(button);
             })
         })
     }

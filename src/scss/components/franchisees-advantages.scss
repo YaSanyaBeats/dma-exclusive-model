@@ -1,0 +1,20 @@
+.franchisees-advantages {
+    .advantage-card {
+        &:nth-child(2) {
+            .advantage-card__icon {
+                path {
+                    stroke: transparent;
+                    fill: black;
+                }
+            }
+            &:hover {
+                .advantage-card__icon {
+                    path {
+                        fill: url(#paint0_linear_222_724);
+                        stroke: transparent;
+                    }
+                }
+            }
+        }
+    }
+}

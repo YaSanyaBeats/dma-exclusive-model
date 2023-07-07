@@ -31,7 +31,8 @@
     }
 }
 .logo {
-    & svg {
+    width: 180px;
+    & img {
         width: 100%;
     }
 }
@@ -94,7 +95,7 @@
         &__burger-button {}
     }
     .logo {
-        width: 270px;
+        width: 180px;
     }
     .menu {
         &__list {

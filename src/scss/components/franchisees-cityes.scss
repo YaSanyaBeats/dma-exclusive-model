@@ -1,0 +1,67 @@
+.franchisees-cityes {
+    margin-top: 100px;
+    .gallery-studios__grid {
+        margin-top: 30px;
+    }
+    &__text {
+        display: block;
+        margin-top: 30px;
+    }
+}
+
+.city-popup {
+    padding: 0;
+    display: flex;
+    gap: 30px;
+    &__left {
+        height: 300px;
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        &:hover {
+            .city-popup {
+                &__image-overlay {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    &__image-overlay {
+        height: 300px;
+        flex: 0 0 300px;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: rgba(0, 0, 0, 0.5);
+
+        opacity: 0;
+        transition: .3s;
+    }
+    &__title {
+        margin: 0;
+    }
+    &__text {
+        display: block;
+    }
+    &__right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 40px;
+        flex: 1 1 400px;
+    }
+}
