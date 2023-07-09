@@ -32,6 +32,7 @@
 }
 .logo {
     width: 180px;
+    transition: .3s;
     & img {
         width: 100%;
     }
@@ -149,17 +150,16 @@
             &_scroll {
                 background-color: #feedf3;
                 border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+                & .logo {
+                    filter: none;
+                }
             }
         }
         &__container {
             padding: 25px 30px;
         }
         &__logo {
-            & svg {
-                & path {
-                    fill: white;
-                }
-            }
+            filter: brightness(0) invert(1);
         }
         &__menu {
             display: none;
@@ -205,7 +205,7 @@
         &__burger-button {}
     }
     .logo {
-        width: 200px;
+        width: 130px;
     }
     .menu {
         &__list {}
@@ -215,4 +215,45 @@
     .burger-button {
         &__line {}
     }
+}
+
+@include media($mobile) {
+    #burger {
+        padding: 0;
+        .burger-popup {
+            display: flex;
+            flex-direction: column;
+
+            height: 100vh;
+            max-height: inherit;
+
+            border-radius: 0;
+            &__menu {
+                margin-top: 80px;
+            }
+            &__list {
+                align-items: flex-start;
+                padding: 0;
+            }
+            &__elem {}
+            &__social {
+                margin-top: 100px;
+            }
+            &__social-elem {
+                width: 30px;
+                height: 30px;
+                svg {
+                    width: 100%;
+                    height: 100%;
+                    path {
+                        fill: url(#paint0_linear_702_119);
+                    }
+                }
+            }
+            &__button {
+                margin-top: 35px;
+            }
+        }
+    }
+    
 }

@@ -289,7 +289,7 @@ a {
 .popup {
     width: 100%;
     max-width: 700px;
-    max-height: min-content;
+    max-height: 90vh;
     overflow-y: auto;
 
     background-color: $white;
@@ -377,6 +377,24 @@ a {
     }
 }
 
-.feedback-popup {
-
+@include media($mobile) {
+    .popup {
+        padding: 20px;
+        border-radius: 10px;
+		&__overlay {
+            padding: 15px;
+        }
+		&__close {
+            width: 30px;
+            height: 30px;
+            top: 20px;
+            right: 20px;
+            &::before {
+                width: 15px;
+            }
+            &::after {
+                width: 15px;
+            }
+        }
+    }
 }

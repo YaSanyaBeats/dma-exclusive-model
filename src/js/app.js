@@ -1,3 +1,6 @@
+const isMobile = document.documentElement.clientWidth < 768;
+const isTablet = document.documentElement.clientWidth < 1140;
+
 function isWebp() {
     // Проверка поддержки webp
     const testWebp = (callback) => {
@@ -161,16 +164,24 @@ class Hotspot {
     }
 }
 
+function setHeaderScroll(header) {
+    if(window.pageYOffset > 50) {
+        header.classList.add('header__wrapper_scroll');
+    }
+    else {
+        header.classList.remove('header__wrapper_scroll');
+    }
+}
+
 function initStickyHeader() {
     const header = document.querySelector('.header__wrapper');
-    document,addEventListener('scroll', (event) => {
-        if(window.pageYOffset > 50) {
-            header.classList.add('header__wrapper_scroll');
-        }
-        else {
-            header.classList.remove('header__wrapper_scroll');
-        }
-    })
+    if(!header.classList.contains('header__wrapper_scroll')) {
+        setHeaderScroll(header);
+        document.addEventListener('scroll', (event) => {
+            setHeaderScroll(header);
+        })
+    }
+    
 }
 
 function initEquipmentAccordion() {
@@ -233,12 +244,20 @@ function initPopup() {
     const cityPopupButtons = document.querySelectorAll('a[href="#city"]');
     if(cityPopupButtons.length > 0) {
         const popupNode = document.querySelector('#city');
-        console.log(1);
         let popup = new CityPopup(popupNode);
         cityPopupButtons.forEach((button) => {
             button.addEventListener('click', (event) => {
                 popup.open(button);
             })
+        })
+    }
+
+    const burgerButton = document.querySelector('.header__burger-button');
+    if(burgerButton) {
+        const popupNode = document.querySelector('#burger');
+        let popup = new Popup(popupNode);
+        burgerButton.addEventListener('click', (event) => {
+            popup.open();
         })
     }
 }
@@ -257,11 +276,60 @@ function initJobSwiper() {
     });
 }
 
+function initStudiosSwiper() {
+    if(isTablet) {
+        const studiosButtons = document.querySelectorAll('.studio-card');
+        if(studiosButtons.length > 0) {
+            let swiperNode = document.createElement('div');
+            swiperNode.classList.add('swiper');
+            swiperNode.classList.add('studios__swiper');
+    
+            let swiperWrapperNode = document.createElement('div');
+            swiperWrapperNode.classList.add('swiper-wrapper');
+    
+            studiosButtons.forEach((button) => {
+                button.remove();
+                button.classList.add('swiper-slide');
+                swiperWrapperNode.append(button);
+            })
+            swiperNode.append(swiperWrapperNode);
+    
+            let studiosGrid = document.querySelector('.studios__grid');
+            studiosGrid.append(swiperNode);
+    
+            const swiper = new Swiper('.studios__swiper', {
+                // Optional parameters
+                loop: false,
+                slidesPerView: 1,
+                spaceBetween: 20,
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2,
+                    }
+                }
+            });
+        }
+    }
+}
+
 function initHotSpots() {
     const hotSpotNodes = document.querySelectorAll('.map__image-wrapper .hotspot');
     if(hotSpotNodes.length > 0) {
         hotSpotNodes.forEach((elem, index) => {
             new Hotspot(elem);
+        })
+    }
+}
+
+function initLottie() {
+    const swipeNode = document.querySelector('#swipe-lottie');
+    if(swipeNode) {
+        let animation = bodymovin.loadAnimation({
+            container: swipeNode, // Required
+            path: '../static/swipe.json', // Required
+            renderer: 'canvas', // Required
+            loop: true, // Optional
+            autoplay: true, // Optional
         })
     }
 }
@@ -276,7 +344,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     initStudiosGallery();
     initPopup();
     initJobSwiper();
+    initStudiosSwiper();
     initHotSpots();
+    initLottie();
 
     const calculatorNode = document.querySelector('.calculator');
     if(calculatorNode) {
