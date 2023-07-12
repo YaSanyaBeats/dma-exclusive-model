@@ -10,3 +10,33 @@
         }
     }
 }
+
+@include media($desktop) {
+    .franchisees {
+		&__info {}
+		&__content {}
+    }
+}
+
+@include media($laptop) {
+    .franchisees {
+		&__info {}
+		&__content {}
+    }
+}
+
+@include media($tablet) {
+    .franchisees {
+        margin-top: 150px;
+		&__info {}
+		&__content {}
+    }
+}
+
+@include media($mobile) {
+    .franchisees {
+        margin-top: 100px;
+		&__info {}
+		&__content {}
+    }
+}

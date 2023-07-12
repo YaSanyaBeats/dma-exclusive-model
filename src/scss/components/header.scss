@@ -217,27 +217,31 @@
     }
 }
 
-@include media($mobile) {
+@include media($tablet) {
     #burger {
         padding: 0;
         .burger-popup {
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
+
+            gap: 30px;
 
             height: 100vh;
             max-height: inherit;
 
             border-radius: 0;
+            padding: 20px 20px 100px 20px;
             &__menu {
-                margin-top: 80px;
+                flex-grow: inherit;
             }
             &__list {
                 align-items: flex-start;
+                flex-direction: column;
                 padding: 0;
             }
             &__elem {}
             &__social {
-                margin-top: 100px;
             }
             &__social-elem {
                 width: 30px;
@@ -251,7 +255,6 @@
                 }
             }
             &__button {
-                margin-top: 35px;
             }
         }
     }

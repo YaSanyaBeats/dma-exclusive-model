@@ -80,29 +80,40 @@
         &__info {}
         &__title {}
         &__text {}
-        &__cards {}
+        &__cards {
+            margin-top: 30px;
+        }
         &__card {}
         &__button {}
     }
     .about-card {
         &_with-image {}
         &_purple {}
-        &__title {}
-        &__text {}
+        &__title {
+            font-size: 48px;
+        }
+        &__text {
+            font-size: 24px;
+        }
     }
 }
 
 @include media ($tablet) {
     .about {
+        margin-top: 150px;
         &__container {}
         &__info {}
         &__title {}
         &__text {}
-        &__cards {}
+        &__cards {
+            flex-wrap: wrap;
+        }
         &__card {}
         &__button {}
     }
     .about-card {
+        flex: 1 1 350px;
+        min-height: 300px;
         &_with-image {}
         &_purple {}
         &__title {}
@@ -112,6 +123,7 @@
 
 @include media ($mobile) {
     .about {
+        margin-top: 100px;
         &__container {}
         &__info {}
         &__title {}
@@ -121,9 +133,14 @@
         &__button {}
     }
     .about-card {
+        min-height: 200px;
         &_with-image {}
         &_purple {}
-        &__title {}
-        &__text {}
+        &__title {
+            font-size: 30px;
+        }
+        &__text {
+            font-size: 16px;
+        }
     }
 }

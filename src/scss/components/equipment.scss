@@ -129,11 +129,15 @@
 
 @include media ($laptop) {
     .equipment {
+        margin-top: 50px;
+        padding: 50px 0;
         &__container {}
         &__header {}
         &__title {}
         &__number {}
-        &__cards {}
+        &__cards {
+            margin-top: 50px;
+        }
         &__card {}
     }
     .equipment-card {
@@ -153,12 +157,18 @@
         &__header {}
         &__title {}
         &__number {}
-        &__cards {}
-        &__card {}
+        &__cards {
+            flex-wrap: wrap;
+        }
+        &__card {
+            flex: 1 1 350px;
+        }
     }
     .equipment-card {
         &__image-wrapper {}
-        &__image {}
+        &__image {
+            height: 200px;
+        }
         &__content {}
         &__title-wrapper {}
         &__title {}
@@ -178,10 +188,14 @@
     }
     .equipment-card {
         &__image-wrapper {}
-        &__image {}
+        &__image {
+            height: 150px;
+        }
         &__content {}
         &__title-wrapper {}
-        &__title {}
+        &__title {
+            font-size: 20px;
+        }
         &__button {}
         &__text {}
     }

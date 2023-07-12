@@ -179,3 +179,130 @@
         }
     }
 }
+
+@include media ($laptop) {
+    .job {
+        &__container {}
+        &__swiper {}
+        &__slide {}
+        &__swiper-navigation {
+        }
+        &__swiper-button-prev {
+        }
+        &__swiper-button-next {
+        }
+    }
+    .job-slide {
+        padding: 100px 100px 50px 50px;
+        &__title {}
+        &__info {
+        }
+        &__column {}
+        &__column-title {}
+        &__slabs {
+        }
+        &__slab {
+        }
+        &__text {
+        }
+    }
+}
+
+@include media ($tablet) {
+    .job {
+        margin-top: 150px;
+        &__container {}
+        &__swiper {}
+        &__slide {}
+        &__swiper-navigation {
+            width: 100px !important;
+            height: 50px !important;
+            padding: 10px 0 0 10px !important;
+            gap: 10px !important;
+            &::before {
+                transform: scale(0.5);
+                top: -18px;
+                right: -6px;
+            }
+            &::after {
+                transform: scale(0.5);
+                bottom: -6px;
+                left: -18px;
+            }
+        }
+        &__swiper-button-prev {
+            flex: 0 0 40px !important;
+            height: 40px !important;
+            &::after {
+                font-size: 20px !important;
+            }
+        }
+        &__swiper-button-next {
+            flex: 0 0 40px !important;
+            height: 40px !important;
+            &::after {
+                font-size: 20px !important;
+            }
+        }
+    }
+    .job-slide {
+        padding: 50px;
+        &__title {
+            font-size: 48px;
+        }
+        &__info {
+        }
+        &__column {
+            gap: 10px;
+        }
+        &__column-title {}
+        &__slabs {
+        }
+        &__slab {
+            padding: 7px;
+        }
+        &__text {
+        }
+    }
+}
+
+@include media ($mobile) {
+    .job {
+        margin-top: 100px;
+        &__container {}
+        &__swiper {
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+        &__slide {}
+        &__swiper-navigation {
+        }
+        &__swiper-button-prev {
+        }
+        &__swiper-button-next {
+        }
+    }
+    .job-slide {
+        padding: 15px 20px 70px 20px;
+        &__title {
+            font-size: 28px;
+        }
+        &__info {
+            flex-direction: column;
+            margin-top: 30px;
+        }
+        &__column {
+            flex: 1 1 auto;
+        }
+        &__column-title {
+            font-size: 20px;
+        }
+        &__slabs {
+        }
+        &__slab {
+        }
+        &__text {
+            font-size: 16px;
+        }
+    }
+}

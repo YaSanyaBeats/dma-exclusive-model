@@ -44,3 +44,101 @@
         font-weight: 500;
     }
 }
+
+@include media($desktop) {
+    .faq {
+        &__container {}
+        &__info {}
+        &__accordeon {}
+    }
+    .accordion {
+        &__elem {}
+        &__header {}
+        &__title {}
+        &__content {}
+        &__text {}
+    }
+}
+
+@include media($laptop) {
+    .faq {
+        &__container {}
+        &__info {}
+        &__accordeon {
+            margin-top: 50px;
+        }
+    }
+    .accordion {
+        &__elem {
+            &_active {
+                .accordion {
+                    &__content {
+                        margin-top: 30px;
+                    }
+                }
+                
+            }
+        }
+        &__header {}
+        &__title {
+            margin: 0;
+        }
+        &__content {
+        }
+        &__text {}
+    }
+}
+
+@include media($tablet) {
+    .faq {
+        margin-top: 150px;
+        &__container {}
+        &__info {}
+        &__accordeon {}
+    }
+    .accordion {
+        &__elem {
+            padding: 15px 0;
+        }
+        &__header {}
+        &__title {
+            font-size: 24px;
+        }
+        &__content {}
+        &__text {
+            font-size: 16px;
+        }
+    }
+}
+
+@include media($mobile) {
+    .faq {
+        margin-top: 100px;
+        &__container {}
+        &__info {}
+        &__accordeon {}
+    }
+    .accordion {
+        &__elem {
+            &_active {
+                .accordion {
+                    &__content {
+                        margin-top: 15px;
+                    }
+                }
+            }
+        }
+        &__header {
+            gap: 20px;
+        }
+        &__title {
+            font-size: 20px;
+        }
+        &__content {
+            
+        }
+        &__text {
+            font-size: 16px;
+        }
+    }
+}

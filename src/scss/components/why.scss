@@ -65,11 +65,15 @@
 
 @include media($laptop) {
     .why {
+        margin-top: 50px;
+        padding: 50px 0;
 		&__container {}
 		&__header {}
 		&__title {}
 		&__number {}
-		&__content {}
+		&__content {
+            gap: 30px;
+        }
 		&__video-wrapper {}
 		&__video {}
 		&__grid {}
@@ -85,10 +89,17 @@
 		&__header {}
 		&__title {}
 		&__number {}
-		&__content {}
-		&__video-wrapper {}
+		&__content {
+            margin-top: 30px;
+            flex-direction: column;
+        }
+		&__video-wrapper {
+            flex: 1 1 auto;
+        }
 		&__video {}
-		&__grid {}
+		&__grid {
+            gap: 30px;
+        }
 		&__cell {}
 		&__cell-title {}
 		&__cell-text {}
@@ -104,9 +115,16 @@
 		&__content {}
 		&__video-wrapper {}
 		&__video {}
-		&__grid {}
+		&__grid {
+            grid-template-columns: 1fr;
+        }
 		&__cell {}
-		&__cell-title {}
-		&__cell-text {}
+		&__cell-title {
+            font-size: 30px;
+        }
+		&__cell-text {
+            font-size: 16px;
+            margin-top: 10px;
+        }
     }
 }

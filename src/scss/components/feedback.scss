@@ -261,6 +261,9 @@
 		&__input {}
 		&__button {}
 		&__rights {}
+        &__gradient-button {
+            padding: 20px 40px;
+        }
     }
 }
 
@@ -299,12 +302,14 @@
         }
 		&__slab-wrapper {
             gap: 10px;
-            max-width: 190px;
+            max-width: 210px;
         }
-		&__slab {}
+		&__slab {
+            gap: 10px;
+        }
 		&__circle {}
 		&__slab-text {
-            font-size: 10px;
+            font-size: 13px;
         }
 		&__form {}
 		&__input-wrapper {}
@@ -312,6 +317,9 @@
 		&__button {}
 		&__rights {
             font-size: 11px;
+        }
+        &__gradient-button {
+            padding: 15px 30px;
         }
     }
 }

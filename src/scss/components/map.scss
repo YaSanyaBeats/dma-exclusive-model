@@ -13,9 +13,142 @@
         margin-top: 100px;
         svg {
             width: 100%;
+            height: auto;
             circle:nth-child(2n + 1) {
                 animation: hotspot 3s infinite;
             }
         }
     }
+    &__tips {
+        display: none;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
+.map-tip {
+    background-color: $white;
+    padding: 20px 40px;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    
+    gap: 25px;
+    &__title {
+        font-size: 36px;
+        font-weight: 600;
+    }
+    &__content {
+        display: flex;
+        align-items: center;
+        gap: 15px;  
+    }
+    &__icon-wrapper {
+        flex: 0 0 25px;
+        height: 25px;
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__text {
+        font-size: 32px;
+        font-weight: 600;
+    }
+}  
+
+@include media($desktop) {
+    .map {
+		&__container {}
+		&__header {}
+		&__title {}
+		&__number {}
+		&__image-wrapper {}
+        &__tips {
+        }
+    }
+    .map-tip {
+        &__title {}
+        &__content {}
+        &__icon-wrapper {}
+        &__text {}
+    } 
+}
+
+@include media($laptop) {
+    .map {
+        margin-top: 50px;
+		&__container {}
+		&__header {}
+		&__title {}
+		&__number {}
+		&__image-wrapper {}
+    }
+    .map-tip {
+        &__title {}
+        &__content {}
+        &__icon-wrapper {}
+        &__text {}
+    } 
+}
+
+@include media($tablet) {
+    .map {
+		&__container {}
+		&__header {}
+		&__title {}
+		&__number {}
+		&__image-wrapper {
+            margin-top: 30px;
+        }
+        &__tips {
+            display: flex;
+            margin-top: 30px;
+        }
+    }
+    .map-tip {
+        padding: 10px 20px;
+        gap: 15px;
+        justify-content: center;
+        align-items: center;
+
+        flex: 1 1 250px;
+        &__title {
+            font-size: 24px;
+        }
+        &__content {
+            gap: 15px;
+        }
+        &__icon-wrapper {}
+        &__text {
+            font-size: 20px;
+        }
+    } 
+}
+
+@include media($mobile) {
+    .map {
+		&__container {}
+		&__header {}
+		&__title {
+            font-size: 30px;
+        }
+		&__number {}
+		&__image-wrapper {}
+    }
+    .map-tip {
+        align-items: flex-start;
+        gap: 5px;
+        &__title {
+            font-size: 16px;
+        }
+        &__content {}
+        &__icon-wrapper {
+            flex: 0 0 15px;
+        }
+        &__text {
+            font-size: 16px;
+        }
+    } 
 }

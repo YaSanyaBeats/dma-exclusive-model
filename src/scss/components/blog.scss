@@ -85,3 +85,76 @@
         margin: 30px 0 0 0;
     }
 }
+
+@include media ($desktop) {
+    .blog {
+		&__container {}
+		&__cards {}
+		&__card {}
+		&__image-wrapper {}
+		&__image {}
+		&__date {}
+		&__title {}
+		&__text {}
+    }
+}
+
+@include media ($laptop) {
+    .blog {
+		&__container {}
+		&__cards {
+            margin-top: 30px;
+        }
+		&__card {}
+		&__image-wrapper {}
+		&__image {}
+		&__date {}
+		&__title {
+            font-size: 24px;
+        }
+		&__text {
+            font-size: 16px;
+        }
+    }
+}
+
+@include media ($tablet) {
+    .blog {
+        margin-top: 150px;
+		&__container {}
+		&__cards {
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+		&__card {}
+		&__image-wrapper {
+            padding-top: 70%;
+        }
+		&__image {
+            
+        }
+		&__date {}
+		&__title {}
+		&__text {}
+    }
+}
+
+@include media ($mobile) {
+    .blog {
+        margin-top: 100px;
+		&__container {}
+		&__cards {
+            grid-template-columns: 1fr;
+            gap: 60px;
+        }
+		&__card {}
+		&__image-wrapper {}
+		&__image {}
+		&__date {}
+		&__title {
+            margin-top: 10px;
+            font-size: 20px;
+        }
+		&__text {}
+    }
+}

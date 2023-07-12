@@ -50,3 +50,100 @@
         }
     }
 }
+
+@include media($desktop) {
+    .article {
+        &__container {}
+        &__title {}
+        &__main-image-wrapper {}
+        &__main-image {}
+        &__content {}
+    }
+}
+
+@include media($laptop) {
+    .article {
+        &__container {}
+        &__title {}
+        &__main-image-wrapper {
+            margin-top: 30px;
+        }
+        &__main-image {}
+        &__content {
+            margin-top: 30px;
+        }
+    }
+}
+
+@include media($tablet) {
+    .article {
+        margin-top: 150px;
+        &__container {}
+        &__title {}
+        &__main-image-wrapper {
+        }
+        &__main-image {
+            max-height: 500px;
+        }
+        &__content {
+            h2 {
+                font-size: 30px;
+            }
+            h3 {
+                font-size: 24px;
+            }
+            h4 {
+                font-size: 20px;
+            }
+            p {
+                font-size: 20px;
+                line-height: 1.25;
+            }
+            blockquote {
+                padding: 20px;
+                font-size: 20px;
+            }
+            img {
+                &.article-image {
+                    margin-right: 25px;
+                }
+            }
+        }
+    }
+}
+
+@include media($mobile) {
+    .article {
+        margin-top: 100px;
+        &__container {}
+        &__title {}
+        &__main-image-wrapper {}
+        &__main-image {
+            max-height: 300px;
+        }
+        &__content {
+            h2 {
+                font-size: 24px;
+            }
+            h3 {
+                font-size: 20px;
+            }
+            h4 {
+                font-size: 16px;
+            }
+            p {
+                font-size: 16px;
+                line-height: 1.25;
+            }
+            blockquote {
+                font-size: 16px;
+            }
+            img {
+                &.article-image {
+                    width: calc(50% - 10px);
+                    margin-right: 0px;
+                }
+            }
+        }
+    }
+}

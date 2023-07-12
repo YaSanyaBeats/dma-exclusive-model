@@ -140,3 +140,90 @@
         object-fit: cover;
     }
 }
+
+@include media($desktop) {
+    .gallery {
+        &__container {}
+        &__info {}
+        &__grid {}
+        &__cell {
+            &_first {}
+            &_last {}
+        }
+        &__subtitle {}
+        &__title {}
+        &__image-wrapper {}
+        &__image {}
+    }
+}
+
+@include media($laptop) {
+    .gallery {
+        &__container {}
+        &__info {}
+        &__grid {
+            margin-top: 30px;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 300px 300px;
+        }
+        &__cell {
+            &_first {
+                grid-column-start: auto;
+                grid-column-end: auto;
+            }
+            &_last {
+                grid-column-start: auto;
+                grid-column-end: auto;
+            }
+        }
+        &__subtitle {}
+        &__title {}
+        &__image-wrapper {}
+        &__image {}
+    }
+}
+
+@include media($tablet) {
+    .gallery {
+        margin-top: 150px;
+        &__container {}
+        &__info {}
+        &__grid {
+            grid-template-columns: 1fr 1fr;
+        }
+        &__cell {
+            &_first {}
+            &_last {}
+        }
+        &__subtitle {}
+        &__title {}
+        &__image-wrapper {}
+        &__image {}
+    }
+}
+
+@include media($mobile) {
+    .gallery {
+        margin-top: 100px;
+        &__container {}
+        &__info {}
+        &__grid {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        &__cell {
+            &_first {}
+            &_last {}
+        }
+        &__subtitle {
+            font-size: 24px;
+        }
+        &__title {
+            font-size: 24px;
+        }
+        &__image-wrapper {}
+        &__image {}
+    }
+}
