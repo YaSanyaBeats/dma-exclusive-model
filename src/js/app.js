@@ -262,18 +262,51 @@ function initPopup() {
     }
 }
 
+function initVideoPopup() {
+    const button = document.querySelector('.video__button');
+    if(button) {
+        const popupNode = document.querySelector('#video-popup');
+        let popup = new Popup(popupNode);
+        button.addEventListener('click', (event) => {
+            popup.open();
+        })
+    }
+}
+
 function initJobSwiper() {
     const jobNode = document.querySelector('.job__swiper');
-    const swiper = new Swiper('.swiper', {
-        // Optional parameters
-        loop: true,
-        
-        // Navigation arrows
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
+    if(jobNode) {
+        const swiper = new Swiper('.job__swiper', {
+            // Optional parameters
+            loop: true,
+            
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    }
+}
+
+function initFranchiseesSwiper() {
+    const franchiseesNode = document.querySelector('.franchisees-swiper__swiper');
+    if(franchiseesNode) {
+        const swiper = new Swiper('.franchisees-swiper__swiper', {
+            // Optional parameters
+            loop: true,
+
+            slidesPerView: 'auto',
+            spaceBetween: 30,
+            grabCursor: true,
+
+            breakpoints: {
+                768: {
+                    
+                }
+            }
+        });
+    }
 }
 
 function initStudiosSwiper() {
@@ -322,14 +355,34 @@ function initHotSpots() {
 }
 
 function initLottie() {
-    const swipeNode = document.querySelector('#swipe-lottie');
-    if(swipeNode) {
-        let animation = bodymovin.loadAnimation({
-            container: swipeNode, // Required
-            path: '../static/swipe.json', // Required
-            renderer: 'canvas', // Required
-            loop: true, // Optional
-            autoplay: true, // Optional
+    const swipeNode = document.querySelectorAll('.swipe-lottie');
+    if(swipeNode.length > 0) {
+        swipeNode.forEach((elem) => {
+            let animation = bodymovin.loadAnimation({
+                container: elem, // Required
+                path: '../static/swipe.json', // Required
+                renderer: 'canvas', // Required
+                loop: true, // Optional
+                autoplay: true, // Optional
+            })
+        })
+    }
+}
+
+function initFixedButtons() {
+    const fixedWrapper = document.querySelector('.fixed-buttons');
+    if(fixedWrapper) {
+        let buttons = fixedWrapper.querySelectorAll('.fixed-buttons__elem');
+        buttons.forEach((button, index) => {
+            button.style.transitionDelay = '.' + (buttons.length - index) + 's';
+        })
+        document.addEventListener('scroll', (event) => {
+            if(window.pageYOffset > 50) {
+                fixedWrapper.classList.add('fixed-buttons_active');
+            }
+            else {
+                fixedWrapper.classList.remove('fixed-buttons_active');
+            }
         })
     }
 }
@@ -345,8 +398,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     initPopup();
     initJobSwiper();
     initStudiosSwiper();
+    initFranchiseesSwiper();
     initHotSpots();
     initLottie();
+    initFixedButtons();
+    initVideoPopup();
 
     const calculatorNode = document.querySelector('.calculator');
     if(calculatorNode) {

@@ -107,7 +107,9 @@
     .advantage-card {
         &__content {}
         &__icon {}
-        &__title {}
+        &__title {
+            font-size: 28px;
+        }
         &__text {}
     }
 }

@@ -1,13 +1,8 @@
-.franchisees {
-    margin-top: 50px;
-    &__content {
-        margin-top: 20px;
-        ul {
-            p{
-                margin: 10px 0;
-            }
-            
-        }
+/*.franchisees {
+    &__hero {
+        background: url('../images/franchisees-hero.png') no-repeat 50% 50% !important;
+        background-size: cover !important;
+        box-shadow: inset 800px 0 200px rgba(0, 0, 0, 0.7);
     }
 }
 
@@ -27,7 +22,6 @@
 
 @include media($tablet) {
     .franchisees {
-        margin-top: 150px;
 		&__info {}
 		&__content {}
     }
@@ -35,8 +29,7 @@
 
 @include media($mobile) {
     .franchisees {
-        margin-top: 100px;
 		&__info {}
 		&__content {}
     }
-}
+}*/

@@ -386,6 +386,8 @@ a {
 
         cursor: pointer;
 
+        z-index: 11;
+
         &::before {
             content: '';
             position: absolute;

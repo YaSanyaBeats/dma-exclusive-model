@@ -1,0 +1,140 @@
+.franchisees-swiper {
+    margin-top: 50px;
+    padding: 50px 0;
+    background-color: $white;
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 200px;
+    }
+    &__left {
+        flex: 0 0 600px;
+    }
+    &__title {
+        font-size: 64px;
+        margin: 0;
+    }
+    &__text {
+        font-size: 24px;
+        display: block;
+        margin-top: 30px;
+    }
+    &__right {
+        flex: 0 0 1420px;
+        width: 1420px;
+    }
+    &__swiper {
+        width: 100%;
+        border-radius: 15px;
+    }
+    &__card {
+        background: $mainGradient;
+        width: 450px !important;
+        min-height: 270px;
+        border-radius: 15px;
+        padding: 30px;
+
+        display: flex !important;
+        flex-direction: column;
+    }
+    &__card-title {
+        font-size: 32px;
+        color: white;
+        text-transform: uppercase;
+        margin: 0;
+    }
+    &__card-text {
+        font-size: 20px;
+        color: white;
+        margin-top: 30px;
+    }
+}
+
+@include media($desktop) {
+    .franchisees-swiper {
+		&__container {}
+		&__left {}
+		&__title {}
+		&__text {}
+		&__right {}
+		&__swiper {}
+		&__card {}
+		&__card-title {}
+		&__card-text {}
+    }
+}
+
+@include media($laptop) {
+    .franchisees-swiper {
+		&__container {
+            gap: 50px;
+        }
+		&__left {
+            flex: 0 0 500px;
+        }
+		&__title {
+            font-size: 48px;
+        }
+		&__text {}
+		&__right {}
+		&__swiper {}
+		&__card {}
+		&__card-title {}
+		&__card-text {}
+    }
+}
+
+@include media($tablet) {
+    .franchisees-swiper {
+        margin-top: 50px;
+        padding: 50px 0;
+		&__container {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 40px;
+        }
+		&__left {
+            flex: 0 0 auto;
+        }
+		&__title {
+            font-size: 42px;
+        }
+		&__text {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+		&__right {
+            flex: 0 0 auto;
+            width: 100%;
+        }
+		&__swiper {}
+		&__card {
+            width: 300px !important;
+        }
+		&__card-title {
+            font-size: 24px;
+        }
+		&__card-text {}
+    }
+}
+
+@include media($mobile) {
+    .franchisees-swiper {
+		&__container {
+            gap: 20px;
+        }
+		&__left {}
+		&__title {
+            font-size: 36px;
+        }
+		&__text {}
+		&__right {}
+		&__swiper {}
+		&__card {
+            width: 100% !important;
+        }
+		&__card-title {}
+		&__card-text {}
+    }
+}

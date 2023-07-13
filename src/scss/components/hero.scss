@@ -7,8 +7,7 @@
         flex-direction: column;
         position: relative;
 
-        background: url(../images/main-banner.png) no-repeat 50% 50% !important;
-        background-size: cover !important;
+        background: url(../images/main-banner.png) no-repeat center/cover !important;
         border-radius: 25px;  
 
         padding: 65px 75px;
@@ -26,6 +25,10 @@
         line-height: 90px;
 
         margin-top: 30px;
+        &_pink {
+            font-weight: inherit;
+            color: $purple;
+        }
     }
     &__text {
         font-size: 36px;
@@ -102,7 +105,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            background-position: 70% 50% !important;
+            background: url(../images/main-banner.png) no-repeat 70% 50%/cover !important;
         }
         &__subtitle {
             font-size: 16px;

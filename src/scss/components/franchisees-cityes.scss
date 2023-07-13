@@ -6,6 +6,48 @@
     &__text {
         display: block;
         margin-top: 30px;
+        padding: 30px;
+        background-color: white;
+        text-align: center;
+        border-radius: 15px;
+        position: relative;
+        z-index: 5;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            
+            width: 100px;
+            height: 200px;
+    
+            background: $mainGradient;
+            border-radius: 50%;
+            filter: blur(20px);
+    
+            transition: .5s;
+            animation: pulse 10s infinite;
+
+            left: -70px;
+            top: 0;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            
+            width: 100px;
+            height: 200px;
+    
+            background: $mainGradientReverse;
+            border-radius: 50%;
+            filter: blur(20px);
+    
+            transition: .5s;
+            animation: pulse 10s infinite;
+
+            right: -70px;
+            bottom: 0;
+        }
     }
 }
 
@@ -63,5 +105,35 @@
         justify-content: center;
         gap: 40px;
         flex: 1 1 400px;
+    }
+}
+
+@include media($desktop) {
+    .franchisees-cityes {
+        .gallery-studios__grid {}
+        &__text {}
+    }
+}
+
+@include media($laptop) {
+    .franchisees-cityes {
+        .gallery-studios__grid {}
+        &__text {}
+    }
+}
+
+@include media($tablet) {
+    .franchisees-cityes {
+        .gallery-studios__grid {
+            margin-top: 0;
+        }
+        &__text {}
+    }
+}
+
+@include media($mobile) {
+    .franchisees-cityes {
+        .gallery-studios__grid {}
+        &__text {}
     }
 }

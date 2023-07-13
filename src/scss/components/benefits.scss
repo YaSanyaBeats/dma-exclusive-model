@@ -36,6 +36,11 @@
 
         position: relative;
     }
+    &_franchisees {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
     &::before {
         content: '';
         position: absolute;
@@ -249,6 +254,9 @@
             font-size: 13px;
 
             margin-top: 10px;
+        }
+        &_franchisees {
+            gap: 20px;
         }
     }
 }
