@@ -38,22 +38,6 @@
             transition: .3s;
         }
     }
-    &:nth-child(2) {
-        .advantage-card__icon {
-            path {
-                stroke: black;
-                fill: transparent;
-            }
-        }
-        &:hover {
-            .advantage-card__icon {
-                path {
-                    stroke: url(#paint0_linear_222_724);
-                    fill: transparent;
-                }
-            }
-        }
-    }
     &__title {
         font-size: 36px;
         font-weight: 600;

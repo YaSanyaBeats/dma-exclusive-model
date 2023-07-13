@@ -114,7 +114,6 @@
         gap: 20px;
     }
     &__slab-wrapper {
-        max-width: 310px;
         border-radius: 7px;
         @include borderGradient(2);
     }
@@ -131,7 +130,7 @@
         font-weight: 500;
     }
     &__form {
-        margin-top: 50px;
+        margin-top: 25px;
 
         display: flex;
         flex-direction: column;
@@ -302,7 +301,6 @@
         }
 		&__slab-wrapper {
             gap: 10px;
-            max-width: 210px;
         }
 		&__slab {
             gap: 10px;
@@ -321,5 +319,8 @@
         &__gradient-button {
             padding: 15px 30px;
         }
+    }
+    .feedback-popup {
+        padding-top: 60px;
     }
 }

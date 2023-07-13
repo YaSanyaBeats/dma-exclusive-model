@@ -81,6 +81,11 @@ class Popup {
         this.closeButton = this.root.querySelector('.popup__close');
         this.overlay = this.root;
         this.html = document.querySelector('html');
+
+        this.callback = {
+            close: () => {},
+            open: () => {}
+        };
         this.bindListeners();
     }
 
@@ -98,11 +103,15 @@ class Popup {
         console.log('open');
         this.html.classList.add('no-scroll');
         this.root.classList.add('popup__overlay_show');
+
+        this.callback.close();
     }
 
     close() {
         this.html.classList.remove('no-scroll');
         this.root.classList.remove('popup__overlay_show');
+
+        this.callback.close();
     }
 }
 
@@ -266,10 +275,12 @@ function initVideoPopup() {
     const button = document.querySelector('.video__button');
     if(button) {
         const popupNode = document.querySelector('#video-popup');
+        const video = document.querySelector('video');
         let popup = new Popup(popupNode);
         button.addEventListener('click', (event) => {
             popup.open();
         })
+        popup.callback.close = () => {video.pause();};
     }
 }
 
